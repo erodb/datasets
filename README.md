@@ -2,6 +2,9 @@
 Hauf Lab Datasets for R Training  
   
 ## Overview
+These are datasets compiled for Bi-Weekly R Training for Hauf Lab  
+This repository will contain a variety of datasets in a variety of formats, as well as their associated presentations and R code.
+
 Virginia Polytechnic Institute and State University  
 Biocomplexity Institute  
 Erod Baybay  
