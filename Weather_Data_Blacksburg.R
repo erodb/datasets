@@ -43,3 +43,58 @@ weather %>%
        y = "Temperature [°F]", x = "Date") +
   theme_bw() +
   theme(strip.background = element_blank())
+
+# ------------------------------------------------------------------------------------------
+
+weather %>%
+  ggplot(aes(group = Month)) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Hottest, yend = High_Temp_Hottest, color = 'Record Hottest Temperature Range'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Coldest, yend = High_Temp_Coldest, color = 'Record Coldest Temperature Range'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Normal_Low, yend = Normal_High, color = 'Normal Temperature Range'), size = 1, alpha = 0.5) +
+  facet_wrap(~factor(Month, levels = unique(Month)), nrow = 1, strip.position = "top") +
+  scale_y_continuous(sec.axis = sec_axis(~(.-32)*(5/9), name = "Temperature [°C]")) + 
+  labs(title = "Normal and Record Temperatures for Blacksburg, Virginia", 
+       caption = "Source: National Weather Service", 
+       color = "",
+       y = "Temperature [°F]", 
+       x = "Date") +
+  theme_bw() +
+  theme(strip.background = element_blank())
+
+# ------------------------------------------------------------------------------------------
+
+weather %>%
+  ggplot(aes(group = Month)) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Hottest, yend = High_Temp_Hottest, color = 'Record Hottest'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Coldest, yend = High_Temp_Coldest, color = 'Record Coldest'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Normal_Low, yend = Normal_High, color = 'Normal'), size = 1, alpha = 0.5) +
+  facet_wrap(~factor(Month, levels = unique(Month)), nrow = 1, strip.position = "top") +
+  scale_y_continuous(sec.axis = sec_axis(~(.-32)*(5/9), name = "Temperature [°C]")) + 
+  labs(title = "Normal and Record Temperatures for Blacksburg, Virginia", 
+       caption = "Source: National Weather Service", 
+       color = "Temperature Range",
+       y = "Temperature [°F]", 
+       x = "Date") +
+  theme_bw() +
+  theme(strip.background = element_blank())
+
+# ------------------------------------------------------------------------------------------
+
+weather %>%
+  ggplot(aes(group = Month)) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Hottest, yend = High_Temp_Hottest, color = 'Record Hottest'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Low_Temp_Coldest, yend = High_Temp_Coldest, color = 'Record Coldest'), size = 1, alpha = 0.5) +
+  geom_segment(aes(x = Day, xend = Day, y = Normal_Low, yend = Normal_High, color = 'Normal'), size = 1, alpha = 0.5) +
+  geom_hline(aes(yintercept = 32), alpha = 0.3) +
+  scale_color_manual(values = c('black','blue','red')) +
+  facet_wrap(~factor(Month, levels = unique(Month)), nrow = 1, strip.position = "top") +
+  scale_y_continuous(sec.axis = sec_axis(~(.-32)*(5/9), name = "Temperature [°C]")) + 
+  labs(title = "Normal and Record Temperatures for Blacksburg, Virginia", 
+       caption = "Source: National Weather Service", 
+       color = "Temperature Range",
+       y = "Temperature [°F]", 
+       x = "Date") +
+  theme_bw() +
+  theme(strip.background = element_blank(),
+        legend.position = 'bottom',
+        legend.text = element_text(size = 8))
