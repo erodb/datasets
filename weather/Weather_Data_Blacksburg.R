@@ -2,7 +2,7 @@ library(tidyverse)   # install.packages("tidyverse")
 
 # ------------------------------------------------------------------------------------------
 
-weather <- read.csv("https://raw.githubusercontent.com/erodb/datasets/master/Weather_Data_Blacksburg.csv")
+weather <- read.csv("https://raw.githubusercontent.com/erodb/datasets/master/weather/Weather_Data_Blacksburg.csv")
 weather <- na.omit(weather)
 weather <- weather %>% separate(Day, sep = '-', c('Day', 'Month')) %>% mutate(Day = as.numeric(Day))
 
