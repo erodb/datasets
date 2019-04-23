@@ -16,5 +16,5 @@ Associated R Code: Weather_Data_Blacksburg.R
 Source URL: https://www.weather.gov/rnk/records#clitop
 
 **• Practice_codon_optimality.csv**  
-(Somewhat incorrect) Fluoresence Microscopy data for mad1/mad3 - wildtype and codon optimised in the nucleus for S. pombe.  
+Old Fluoresence Microscopy data for mad1-ymeGFP/mad3-ymeGFP in wildtype and codon optimised strains of S. pombe (fission yeast). Also contains nuclear volumes, background subtraction intensities, and categorization between tagged and untagged (A and B) cells.
 Associated R Code: Practice_codon_optimality.R  
