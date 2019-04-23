@@ -14,3 +14,7 @@ Erod Keaton D. Baybay
 Record and Normal Temperatures for Blacksburg, Virginia, from the National Weather Service.  
 Associated R Code: Weather_Data_Blacksburg.R  
 Source URL: https://www.weather.gov/rnk/records#clitop
+
+**• Practice_codon_optimality.csv**  
+(Somewhat incorrect) Fluoresence Microscopy data for mad1/mad3 - wildtype and codon optimised in the nucleus for S. pombe.  
+Associated R Code: Practice_codon_optimality.R  
