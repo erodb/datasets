@@ -1,4 +1,4 @@
-library(tidyverse) # install.packages("tidyverse")
+library(tidyverse)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 A <- read.csv("https://raw.githubusercontent.com/erodb/datasets/master/education/Education_Data.csv", header = TRUE)
@@ -14,7 +14,10 @@ colname(B)[5] <- "Year" # Rename due to gsub
 # Output Number of Countries
 length(unique(B$Country_Name))
 
-# Sample Subset (Government Expenditure per Student in the United States)
+# Output Number of Indicators
+length(unique(B$Indicator_Name))
+
+# Sample Subset (Demographics by Age Group in the United States)
 pop <- c('SP.POP.0014.TO.ZS',
          'SP.POP.1564.TO.ZS')
 USAdata <- filter(B, 
