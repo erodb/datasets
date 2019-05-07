@@ -11,7 +11,7 @@ B <- B %>% mutate(Country_Name = as.character(Country_Name),
 colname(B)[5] <- "Year" # Rename due to gsub
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Output Country Name
+# Output Number of Countries
 length(unique(B$Country_Name))
 
 # Sample Subset
