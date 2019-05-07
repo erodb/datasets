@@ -14,5 +14,14 @@ colname(B)[5] <- "Year" # Rename due to gsub
 # Output Number of Countries
 length(unique(B$Country_Name))
 
-# Sample Subset
-peruData <- filter(B, Country_Name == "Peru")
+# Sample Subset (Government Expenditure per Student in the United States)
+pop <- c('SP.POP.0014.TO.ZS',
+         'SP.POP.1564.TO.ZS')
+USAdata <- filter(B, 
+                  Country_Name == 'United States',
+                  Indicator_Code %in% pop)
+
+# Sample Plot
+ggplot(data = USAdata, aes(x = Year, y = Data, fill = Indicator_Name)) +
+  geom_bar(stat = "identity") +
+  theme_bw()
