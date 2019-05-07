@@ -1,4 +1,4 @@
-library(tidyverse)
+library(tidyverse) # install.packages("tidyverse")
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 A <- read.csv("https://raw.githubusercontent.com/erodb/datasets/master/education/Education_Data.csv", header = TRUE)
